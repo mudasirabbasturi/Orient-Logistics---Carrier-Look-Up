@@ -1,0 +1,28 @@
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Storage & Logs
+storage/logs/*.log
+storage/cache/*
+storage/*.txt
+!storage/logs/.gitkeep
+!storage/cache/.gitkeep
+
+# Local developer scripts
+*.bat
+*.cmd
+*.ps1
+
+# System & Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# Dependency directories
+/vendor/
+

@@ -1,0 +1,512 @@
+:root {
+    --ols-navy: #0a2540;
+    --ols-navy-light: #16365c;
+    --ols-navy-dark: #06192c;
+    --ols-cyan: #00d4ff;
+    --ols-cyan-hover: #00b8db;
+    --ols-teal: #00a8a8;
+    --ols-emerald: #10b981;
+    --ols-amber: #f59e0b;
+    --ols-rose: #ef4444;
+    --ols-slate-50: #f8fafc;
+    --ols-slate-100: #f1f5f9;
+    --ols-slate-200: #e2e8f0;
+    --ols-slate-300: #cbd5e1;
+    --ols-slate-400: #94a3b8;
+    --ols-slate-500: #64748b;
+    --ols-slate-600: #475569;
+    --ols-slate-700: #334155;
+    --ols-slate-800: #1e293b;
+    --ols-slate-900: #0f172a;
+    --ols-card-bg: #ffffff;
+    --ols-card-subtle: #f8fafc;
+    --ols-border: #e2e8f0;
+    --ols-text-main: #0f172a;
+    --ols-text-muted: #64748b;
+    --ols-shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --ols-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --ols-shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+}
+
+body.ols-dark-mode {
+    --ols-card-bg: #1e293b;
+    --ols-card-subtle: #0f172a;
+    --ols-border: #334155;
+    --ols-text-main: #f8fafc;
+    --ols-text-muted: #94a3b8;
+    background-color: #0b1120 !important;
+    color: #f8fafc !important;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+
+body {
+    background-color: #f4f7fb;
+    color: var(--ols-text-main);
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Header & Brand */
+.ols-app-header {
+    background: linear-gradient(135deg, #0a2540 0%, #103a63 100%);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    box-shadow: 0 4px 20px rgba(10, 37, 64, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.ols-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.ols-brand-logo {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #00d4ff 0%, #0077b6 100%);
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 212, 255, 0.3);
+}
+
+.ols-brand-tag {
+    font-size: 11px;
+    background: rgba(0, 212, 255, 0.2);
+    color: #00d4ff;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+/* Nav Tabs */
+.ols-nav-tabs {
+    display: flex;
+    gap: 4px;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 4px;
+    border-radius: 10px;
+}
+
+.ols-nav-item {
+    background: transparent;
+    border: none;
+    color: rgba(255, 255, 255, 0.75);
+    padding: 8px 16px;
+    font-size: 13px;
+    font-weight: 600;
+    border-radius: 7px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.ols-nav-item:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.ols-nav-item.active {
+    background: #00d4ff;
+    color: #0a2540;
+    font-weight: 700;
+    box-shadow: 0 2px 8px rgba(0, 212, 255, 0.3);
+}
+
+/* Header Action Buttons */
+.ols-header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ols-btn-action {
+    background: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 7px 14px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.ols-btn-action:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+/* Workspace Container */
+.ols-workspace-container {
+    max-width: 1400px;
+    margin: 20px auto;
+    padding: 0 20px 40px;
+}
+
+/* Shift Info & Clock Bar */
+.ols-timeclock-card {
+    background: var(--ols-card-bg);
+    border: 1px solid var(--ols-border);
+    border-radius: 12px;
+    padding: 14px 22px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: var(--ols-shadow-sm);
+}
+
+.ols-clock-info {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.ols-pill-status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 700;
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.ols-pill-status.break {
+    background: #fef3c7;
+    color: #b45309;
+}
+
+.ols-shift-timer {
+    font-size: 13px;
+    color: var(--ols-slate-500);
+}
+
+.ols-shift-timer strong {
+    color: var(--ols-navy);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.ols-clock-btns {
+    display: flex;
+    gap: 10px;
+}
+
+.ols-btn-clock {
+    padding: 7px 14px;
+    border-radius: 7px;
+    font-size: 12px;
+    font-weight: 700;
+    cursor: pointer;
+    border: 1px solid var(--ols-border);
+    background: var(--ols-card-bg);
+    color: var(--ols-text-main);
+    transition: all 0.2s ease;
+}
+
+.ols-btn-clock:hover {
+    background: var(--ols-slate-100);
+}
+
+.ols-btn-clock.primary {
+    background: #ef4444;
+    border-color: #ef4444;
+    color: #ffffff;
+}
+
+/* Quick Search Bar */
+.ols-search-panel {
+    background: var(--ols-card-bg);
+    border: 1px solid var(--ols-border);
+    border-radius: 14px;
+    padding: 14px 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    box-shadow: var(--ols-shadow);
+}
+
+.ols-search-type-group {
+    display: flex;
+    gap: 4px;
+}
+
+.ols-type-btn {
+    padding: 6px 12px;
+    font-size: 12px;
+    font-weight: 600;
+    border: 1px solid var(--ols-border);
+    background: var(--ols-card-bg);
+    color: var(--ols-text-muted);
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ols-type-btn.active {
+    background: #0a2540;
+    color: #ffffff;
+    border-color: #0a2540;
+}
+
+.ols-search-input {
+    flex: 1;
+    height: 40px;
+    border: 1px solid var(--ols-border);
+    border-radius: 8px;
+    padding: 0 14px;
+    font-size: 14px;
+    background: var(--ols-card-subtle);
+    color: var(--ols-text-main);
+    outline: none;
+    transition: border-color 0.2s;
+}
+
+.ols-search-input:focus {
+    border-color: #00d4ff;
+    box-shadow: 0 0 0 3px rgba(0, 212, 255, 0.15);
+}
+
+.ols-btn-search {
+    background: linear-gradient(135deg, #00d4ff 0%, #0096c7 100%);
+    color: #0a2540;
+    font-weight: 700;
+    border: none;
+    height: 40px;
+    padding: 0 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 13px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+/* Dialer Layout: Two Columns */
+.ols-dialer-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 20px;
+}
+
+/* Carrier Card */
+.ols-carrier-card {
+    background: var(--ols-card-bg);
+    border: 1px solid var(--ols-border);
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: var(--ols-shadow);
+}
+
+.ols-card-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding-bottom: 18px;
+    border-bottom: 1px solid var(--ols-border);
+}
+
+.ols-carrier-title {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--ols-navy);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.ols-badge {
+    font-size: 11px;
+    padding: 3px 8px;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.ols-badge.authorized {
+    background: #dcfce7;
+    color: #15803d;
+}
+
+.ols-badge.not-authorized {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* Details Grid */
+.ols-meta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.ols-meta-item {
+    background: var(--ols-card-subtle);
+    border: 1px solid var(--ols-border);
+    padding: 12px 14px;
+    border-radius: 8px;
+    position: relative;
+}
+
+.ols-meta-label {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--ols-slate-400);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.ols-meta-val {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--ols-text-main);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.ols-copy-btn {
+    background: transparent;
+    border: none;
+    color: #0096c7;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: background 0.2s;
+}
+
+.ols-copy-btn:hover {
+    background: rgba(0, 150, 199, 0.1);
+}
+
+/* Right Rig Action Panel (Call & Disposition) */
+.ols-rig-panel {
+    background: var(--ols-card-bg);
+    border: 1px solid var(--ols-border);
+    border-radius: 14px;
+    padding: 22px;
+    box-shadow: var(--ols-shadow);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.ols-call-status-box {
+    background: linear-gradient(135deg, #0a2540 0%, #16365c 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 16px;
+    text-align: center;
+}
+
+.ols-btn-dial {
+    background: #10b981;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    font-size: 15px;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: opacity 0.2s;
+}
+
+.ols-btn-dial:hover {
+    opacity: 0.9;
+}
+
+/* Navigation between MC numbers */
+.ols-nav-mc-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.ols-btn-step {
+    background: var(--ols-card-bg);
+    border: 1px solid var(--ols-border);
+    padding: 7px 16px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--ols-navy);
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.ols-btn-step:hover {
+    background: #0a2540;
+    color: #ffffff;
+}
+
+/* Tables for Logs, Sessions, Saved */
+.ols-table-responsive {
+    overflow-x: auto;
+    background: var(--ols-card-bg);
+    border: 1px solid var(--ols-border);
+    border-radius: 12px;
+}
+
+.ols-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+
+.ols-table th {
+    background: var(--ols-card-subtle);
+    padding: 12px 16px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--ols-slate-500);
+    text-transform: uppercase;
+    font-size: 11px;
+    border-bottom: 1px solid var(--ols-border);
+}
+
+.ols-table td {
+    padding: 12px 16px;
+    border-bottom: 1px solid var(--ols-border);
+    color: var(--ols-text-main);
+}
+
+.ols-table tr:hover td {
+    background: var(--ols-card-subtle);
+}
+
